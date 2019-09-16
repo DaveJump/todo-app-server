@@ -15,7 +15,6 @@ module.exports = {
   },
   privateDecrypt: str => {
     let privateKey = fs.readFileSync(path.resolve('/www/todo-app/pk.pem'))
-    console.log(privateKey, 'privateKey')
     let textBuffer = Buffer.from(str, 'base64')
     let decryptedText = crypto.privateDecrypt({
       key: privateKey,
