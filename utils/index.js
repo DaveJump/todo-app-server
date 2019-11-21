@@ -14,7 +14,7 @@ module.exports = {
     return md5hash.update(afterSalt).digest('hex')
   },
   privateDecrypt: str => {
-    let privateKey = fs.readFileSync(path.resolve('/www/todo-app/pk.pem'))
+    let privateKey = fs.readFileSync(path.resolve('/usr/local/www/todo-app/pk.pem'))
     let textBuffer = Buffer.from(str, 'base64')
     let decryptedText = crypto.privateDecrypt({
       key: privateKey,
